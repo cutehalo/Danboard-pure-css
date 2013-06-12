@@ -1,0 +1,344 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Danboard - Drawing Test</title>
+<style type="text/css">
+body {
+    margin: 0px;
+    background:#EBE2CE;
+}
+.Canvas {
+    top:100px;
+    position:relative;
+    width:172px;
+    z-index:-111;
+    margin:0 auto;
+}
+.Head {
+    border:1px solid #960;
+    border-radius:5px;
+    width:170px;
+    height:100px;
+    background:#BC9864;
+    position:relative;
+    -webkit-box-shadow: 0px 2px 3px #630;
+    z-index:3;
+    display:block;
+}
+.eyeL {
+    border:0;
+    border-radius:100px;
+    width:18px;
+    height:18px;
+    background:#FC0;
+    position:absolute;
+    left:28%;
+    top:25px;
+    -webkit-box-shadow: 0px 0px 4px #FFC;
+}
+.eyeR {
+    border:0;
+    border-radius:100px;
+    width:18px;
+    height:18px;
+    background:#FC0;
+    position:absolute;
+    right:28%;
+    top:25px;
+    -webkit-box-shadow: 0px 0px 4px #FFC;
+}
+.eyeLtop {
+    border:0;
+    border-radius:100px;
+    width:16px;
+    height:16px;
+    background:#FFC;
+    position:absolute;
+    left:48px;
+    top:26px;
+    z-index:2;
+}
+.eyeRtop {
+    border:0;
+    border-radius:100px;
+    width:16px;
+    height:16px;
+    background:#FFC;
+    position:absolute;
+    right:48px;
+    top:26px;
+    z-index:2;
+}
+.mouth {
+    color:#500;
+    font-size:25px;
+    font-family:verdana;
+    text-align:center;
+    margin-top:50px;
+    text-shadow: 0px 0px 4px #930;
+}
+.logo {
+    color:#222;
+    font-size:8px;
+    font-family:arial;
+    position:absolute;
+    top:3px;
+    left:5px;
+    text-shadow: 0px 0px 4px #CEC292;
+}
+.barcode {
+    color:#222;
+    font-size:18px;
+    position:absolute;
+    bottom:3px;
+    left:5px;
+    text-shadow: 0px 0px 4px #CEC292;
+}
+.sign {
+    color:#222;
+    font-size:18px;
+    position:absolute;
+    bottom:2px;
+    right:5px;
+    text-shadow: 0px 0px 4px #CEC292;
+}
+.ears {
+    width:8px;
+    height:5px;
+    background:#960;
+    position:absolute;
+    left:-8px;
+    bottom:27px;
+    border-radius:20px 0 0 20px;
+    -webkit-box-shadow: -1px 0px 2px #630;
+}
+.neckL1 {
+    width:16px;
+    height:8px;
+    background:#960;
+    border-radius:4px 0 0 20px;
+    position:absolute;
+    left:25px;
+    -webkit-box-shadow: 0px 2px 3px #630;
+    z-index:-3;
+}
+.neckR1 {
+    width:16px;
+    height:8px;
+    background:#960;
+    border-radius:0 4px 20px 0;
+    position:absolute;
+    right:25px;
+    -webkit-box-shadow: 0px 2px 3px #630;
+    z-index:-3;
+}
+.neckL2 {
+    width:15px;
+    height:15px;
+    border-radius:30px;
+    background:#300;
+    position:absolute;
+    z-index:-4;
+    left:20px;
+    top:98px;
+    -webkit-box-shadow: 0px 2px 3px #630;
+}
+.neckR2 {
+    width:15px;
+    height:15px;
+    border-radius:30px;
+    background:#300;
+    position:absolute;
+    z-index:-4;
+    right:20px;
+    top:98px;
+    -webkit-box-shadow: 0px 2px 3px #630;
+}
+.bodyMain {
+    width:90px;
+    height:100px;
+    background:#BC9864;
+    border:1px solid #960;
+    position:absolute;
+    z-index:-2;
+    left:40px;
+    top:101px;
+    -webkit-box-shadow: 0px 2px 3px #630;
+}
+.bodyLogo {
+    color:#222;
+    font-size:8px;
+    font-family:arial;
+    border:0px solid red;
+    writing-mode:tb-rl;
+    -webkit-transform:rotate(90deg);
+    -moz-transform:rotate(90deg);
+    -o-transform: rotate(90deg);
+    white-space:nowrap;
+    display:block;
+    bottom:0;
+    width:20px;
+    height:20px;
+    text-indent:5px;
+    margin-left:33px;
+    text-shadow: 0px 0px 4px #CEC292;
+}
+.circle {
+    width:10px;
+    height:10px;
+    border-radius:30px;
+    background:#ddd;
+    position:absolute;
+    right:8px;
+    top:6px;
+    border: 1px solid #930;
+    -webkit-box-shadow: 0px 0px 2px #630;
+}
+.strikeLine {
+    width:8px;
+    height:2px;
+    background:#333;
+    margin-top:4px;
+    margin-left:1px;
+    position:absolute;
+    -webkit-transform: rotate(-8deg);
+    -moz-transform: rotate(-8deg);
+}
+.armLeft {
+    -webkit-transform: rotate(10deg);
+    -moz-transform: rotate(10deg);
+    width:24px;
+    height:80px;
+    background:#BC9864;
+    border:1px solid #960;
+    position:absolute;
+    z-index:2;
+    top:111px;
+    left:6px;
+    -webkit-box-shadow: 0px 2px 3px #630;
+}
+.armRight {
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    width:24px;
+    height:80px;
+    background:#BC9864;
+    border:1px solid #960;
+    position:absolute;
+    z-index:2;
+    top:111px;
+    right:6px;
+    -webkit-box-shadow: 0px 2px 3px #630;
+}
+.skirtLeft {
+    -webkit-transform: rotate(10deg);
+    -moz-transform: rotate(10deg);
+    width:3px;
+    height:30px;
+    background:#BC9864;
+    border:1px solid #960;
+    position:absolute;
+    z-index:-2;
+    top:200px;
+    left:32px;
+    border-radius:100px 0 0 0;
+    -webkit-box-shadow: 0px 2px 3px #630;
+}
+.skirtRight {
+    -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    width:3px;
+    height:30px;
+    background:#BC9864;
+    border:1px solid #960;
+    position:absolute;
+    z-index:-2;
+    top:200px;
+    right:32px;
+    border-radius:0 100px 0 0;
+    -webkit-box-shadow: 0px 2px 3px #630;
+}
+.skirtCenter {
+    width:90px;
+    height:30px;
+    background:#BC9864;
+    border:1px solid #960;
+    position:absolute;
+    z-index:-2;
+    top:201px;
+    left:40px;
+    -webkit-box-shadow: 0px 3px 5px #630;
+}
+.legLeft {
+    -webkit-transform: rotate(3deg);
+    -moz-transform: rotate(3deg);
+    width:24px;
+    height:50px;
+    background:#BC9864;
+    border:1px solid #960;
+    position:absolute;
+    z-index:-3;
+    top:231px;
+    left:50px;
+    -webkit-box-shadow: 0px 2px 3px #630;
+}
+.legRight {
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    width:24px;
+    height:50px;
+    background:#BC9864;
+    border:1px solid #960;
+    position:absolute;
+    z-index:-3;
+    top:231px;
+    right:50px;
+    -webkit-box-shadow: 0px 2px 3px #630;
+}
+.title {
+    font-family:Times;
+    font-size:28px;
+    font-style:italic;
+    color:#630;
+    margin:20px auto;
+    text-align:center;
+    text-shadow: 0px 0px 4px #FFF;
+}
+.title span {
+    font-size:18px;
+}
+</style>
+</head>
+
+<body>
+<div class="Canvas">
+    <div class="Head">
+        <div class="eyeL"></div>
+        <div class="eyeR"></div>
+        <div class="eyeLtop"></div>
+        <div class="eyeRtop"></div>
+        <div class="mouth">▲</div>
+        <div class="logo"></div>
+        <div class="barcode"></div>
+        <div class="sign"></div>
+        <div class="ears"></div>
+    </div>
+    <div class="neckL1"></div>
+    <div class="neckR1"></div>
+    <div class="neckL2"></div>
+    <div class="neckR2"></div>
+    <div class="bodyMain">
+        <div class="bodyLogo"></div>
+        <div class="circle"><div class="strikeLine"></div></div>
+    </div>
+    <div class="armLeft"></div>
+    <div class="armRight"></div>
+    <div class="skirtLeft"></div>
+    <div class="skirtRight"></div>
+    <div class="skirtCenter"></div>
+    <div class="legLeft"></div>
+    <div class="legRight"></div>
+</div>
+</body>
+</html>
